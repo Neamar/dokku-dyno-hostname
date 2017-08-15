@@ -17,7 +17,7 @@ This is especially useful for monitoring services (esp. New Relic), that would o
 
 ```shell
 # on 0.4.x
-dokku plugin:install https://github.com/michaelshobbs/dokku-hostname.git dokku-hostname
+dokku plugin:install https://github.com/neamar/dokku-dyno-hostname.git dokku-dyno-hostname
 ```
 
 ## acknowledgement
