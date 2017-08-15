@@ -1,6 +1,6 @@
 [plugin]
-name = "dokku-hostname"
-description = "Sets the docker hostname option for dokku"
-version = "0.2.0"
-website_url = "https://github.com/michaelshobbs/dokku-hostname"
+name = "dokku-dyno-hostname"
+description = "Dynamically sets the docker hostname option for dokku"
+version = "0.0.1"
+website_url = "https://github.com/neamar/dokku-dyno-hostname"
 [plugin.config]

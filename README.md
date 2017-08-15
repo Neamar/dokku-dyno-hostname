@@ -1,8 +1,11 @@
-# dokku-hostname [![Build Status](https://img.shields.io/circleci/project/michaelshobbs/dokku-hostname.svg?branch=master "Build Status")](https://circleci.com/gh/michaelshobbs/dokku-hostname/tree/master)
+# dokku-dyno-hostname
 
 Sets the docker hostname option for dokku (https://github.com/dokku/dokku)
 
-Currently just sets --hostname=`hostname`.
+Currently just set `--hostname=app-name.dyno.scale`, for instance `myapp.web.1`
+
+This is especially useful for monitoring services (esp. New Relic), that would other wise get a random hash as hostname for every container.
+
 
 ## requirements
 
@@ -13,19 +16,9 @@ Currently just sets --hostname=`hostname`.
 ## installation
 
 ```shell
-# on 0.3.x
-cd /var/lib/dokku/plugins
-git clone https://github.com/michaelshobbs/dokku-hostname.git dokku-hostname
-dokku plugins-install
-
 # on 0.4.x
 dokku plugin:install https://github.com/michaelshobbs/dokku-hostname.git dokku-hostname
 ```
 
-## hooks
-
-This plugin provides the following triggers:
-
-* `docker-args-build`: adds the `--hostname` env var to the host's `hostname` or (if available) the AWS OpsWorks stack name + - + `hostname`
-* `docker-args-deploy`: adds the `--hostname` env var to the host's `hostname` or (if available) the AWS OpsWorks stack name + - + `hostname`
-* `docker-args-run`: adds the `--hostname` env var to the host's `hostname` or (if available) the AWS OpsWorks stack name + - + `hostname`
+## acknowledgement
+This plugin is based on https://github.com/michaelshobbs/dokku-hostname
