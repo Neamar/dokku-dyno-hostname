@@ -7,6 +7,6 @@ if [[ "$IMAGE_SOURCE_TYPE" == "dockerfile" ]] && [[ "$0" == *build ]]; then
   echo -n "$STDIN"
 else
   STDIN=$(cat)
-  HOSTNAME=$DYNO
+  HOSTNAME="dokku-$DYNO"
   echo -n "$STDIN --hostname=${HOSTNAME}"
 fi
